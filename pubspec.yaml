@@ -33,18 +33,20 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get_it: ^7.2.0
-    # Bloc for state management
+  # Bloc for state management
   flutter_bloc: ^8.0.1
-    # Value equality
+  # Value equality
   equatable: ^2.0.3
-    # Functional programming thingies
+  # Functional programming thingies
   dartz: ^0.10.1
     # Remote API
-    # connectivity: ^3.0.6
+  # connectivity: ^3.0.6
   data_connection_checker_tv:
   http: ^0.13.4
-    # Local cache
+  # Local cache
   shared_preferences: ^2.0.13
+  dio: ^4.0.6
+
 
 dev_dependencies:
   flutter_test:
