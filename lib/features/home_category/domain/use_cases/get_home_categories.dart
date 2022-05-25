@@ -8,7 +8,7 @@ class GetHomeCategories {
 
   GetHomeCategories(this.categoryRepository);
 
-  Future<Either<Failure, List<Category>>> call() async {
+  Future<Either<Failure, List<Category>>> getCategories() async {
     return await categoryRepository.getHomeCategories();
   }
 }

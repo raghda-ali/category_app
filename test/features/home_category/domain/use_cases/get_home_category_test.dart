@@ -7,7 +7,7 @@ import 'package:mocktail/mocktail.dart';
 
 class MockCategoryRepository extends Mock implements CategoryRepository {}
 
-Future<void> main() async {
+void main() {
   late GetHomeCategories categoryUseCase;
   late MockCategoryRepository mockCategoryRepository;
   setUp(() {
@@ -16,20 +16,21 @@ Future<void> main() async {
   });
   List<Category> categoryList = [
     const Category(
-        id: 1,
-        name: "Super market",
-        image: "https://ta3alapp.com/ta3al/images/category/623c533878201.jpg",
-        color: "#e7eddd"),
+      id: 1,
+      name: "Super market",
+      image: "https://ta3alapp.com/ta3al/images/category/623c533878201.jpg",
+      color: "#e7eddd",
+    ),
   ];
-  test(
-      'should get list of home category from the repository',
-      () async {
-            //arrange
-            when(() => mockCategoryRepository.getHomeCategories())
-                .thenAnswer((_) async => Right(categoryList));
-          });
-  //act
-  final result = await categoryUseCase.call();
-  expect(result, Right(categoryList));
-  verify(() => mockCategoryRepository.getHomeCategories());
+  print(categoryList);
+  test('should get list of home category from the repository', () async {
+    //arrange
+    when(() => mockCategoryRepository.getHomeCategories())
+        .thenAnswer((_) async => Right(categoryList));
+    final result = await categoryUseCase.getCategories();
+    print(result);
+    expect(result, Right(categoryList));
+    verify(() => mockCategoryRepository.getHomeCategories());
+    verifyNoMoreInteractions(mockCategoryRepository);
+  });
 }
