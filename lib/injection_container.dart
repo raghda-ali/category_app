@@ -9,7 +9,7 @@ import 'features/home_category/data/repositories/category_repository_impl.dart';
 
 final sl = GetIt.instance;
 
-void init() {
+Future<void> init() async{
   //Cubit
   sl.registerFactory(() => CategoryCubit(homeCategoriesUseCase: sl()));
   //UseCases
