@@ -1,6 +1,35 @@
 {
-  "id": 1,
-  "name": "Super market",
-  "image": "https://ta3alapp.com/ta3al/images/category/623c533878201.jpg",
-  "color": "#e7eddd"
+  "Status Code": 200,
+  "Category": [
+    {
+      "id": 1,
+      "name": "مطاعم",
+      "image": "https://ta3alapp.com/ta3al/images/category/623c53655e05a.jpg",
+      "back_ground_color": "#ededed"
+    },
+    {
+      "id": 2,
+      "name": "سوبر ماركت",
+      "image": "https://ta3alapp.com/ta3al/images/category/623c533878201.jpg",
+      "back_ground_color": "#e7eddd"
+    },
+    {
+      "id": 3,
+      "name": "صيدليه",
+      "image": "https://ta3alapp.com/ta3al/images/category/623c53942290e.jpg",
+      "back_ground_color": "#cca9be"
+    },
+    {
+      "id": 4,
+      "name": "مشروبات",
+      "image": "https://ta3alapp.com/ta3al/images/category/623c4a4688b4e.jpg",
+      "back_ground_color": "#d8e3eb"
+    },
+    {
+      "id": 5,
+      "name": "مأكولات",
+      "image": "https://ta3alapp.com/ta3al/images/category/623c4ad1b8295.jpg",
+      "back_ground_color": "#dae5ed"
+    }
+  ]
 }

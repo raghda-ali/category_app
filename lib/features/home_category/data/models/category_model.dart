@@ -18,7 +18,7 @@ class CategoryModel extends Category {
         id: json['id'],
         name: json['name'],
         image: json['image'],
-        color: json['color']);
+        color: json['back_ground_color']);
   }
   Map<String, dynamic> toJson() {
     return {
