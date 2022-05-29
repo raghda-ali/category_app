@@ -10,7 +10,8 @@ void main() {
   late MockDataConnectionChecker mockDataConnectionChecker;
   setUp(() {
     mockDataConnectionChecker = MockDataConnectionChecker();
-    networkInfo = NetworkInfoImpl(mockDataConnectionChecker);
+    networkInfo =
+        NetworkInfoImpl(dataConnectionChecker: mockDataConnectionChecker);
   });
   group('isConnected', () {
     test('should forward the call to the data connection ', () async {
@@ -21,8 +22,10 @@ void main() {
       //act
       final result = networkInfo.isConnected;
       //assert
-      verify(()=>mockDataConnectionChecker.hasConnection);
+      verify(() => mockDataConnectionChecker.hasConnection);
       expect(result, hasConnectionValue);
+      print(result);
+      print(hasConnectionValue);
     });
   });
 }

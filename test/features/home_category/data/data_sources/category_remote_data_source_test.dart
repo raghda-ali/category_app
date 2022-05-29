@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:category_app_demo/core/constants/app_strings.dart';
 import 'package:category_app_demo/core/error/exceptions.dart';
-import 'package:category_app_demo/core/error/failures.dart';
 import 'package:category_app_demo/features/home_category/data/data_sources/category_remote_data_source.dart';
 import 'package:category_app_demo/features/home_category/data/models/category_model.dart';
 import 'package:category_app_demo/features/home_category/domain/entities/category.dart';
@@ -20,7 +19,7 @@ void main() {
   late MockDio mockDio;
   setUp(() {
     mockDio = MockDio();
-    remoteDataSourceImpl = CategoryRemoteDataSourceImpl(mockDio);
+    remoteDataSourceImpl = CategoryRemoteDataSourceImpl(dio: mockDio);
   });
   void setUpMockDioSuccess200() {
     when(() => mockDio.get(
@@ -68,6 +67,8 @@ void main() {
             "${AppStrings.baseUrl}get_category",
           ));
       expect(result, categoryList);
+      print(result);
+      print(categoryList);
     });
     test('should return ServerException when the response is 404', () async {
       //arrange

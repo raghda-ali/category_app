@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 class GetHomeCategories {
   final CategoryRepository categoryRepository;
 
-  GetHomeCategories(this.categoryRepository);
+  GetHomeCategories({required this.categoryRepository});
 
   Future<Either<Failure, List<Category>>> getCategories() async {
     return await categoryRepository.getHomeCategories();

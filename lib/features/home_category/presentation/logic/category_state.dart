@@ -33,5 +33,5 @@ class CategorySuccess extends CategoryState {
 
 class CategoryEmpty extends CategoryState {
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }

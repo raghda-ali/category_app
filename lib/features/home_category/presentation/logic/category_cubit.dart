@@ -23,6 +23,7 @@ class CategoryCubit extends Cubit<CategoryState> {
     failureOrData.fold(
         (failure) => emit(CategoryError(errorMessage: _mapFailureToMessage(failure))),
         (data) => emit(CategorySuccess(homeCategoryList: data)));
+    print(state.toString());
   }
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {

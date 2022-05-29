@@ -12,7 +12,7 @@ void main() {
   late MockCategoryRepository mockCategoryRepository;
   setUp(() {
     mockCategoryRepository = MockCategoryRepository();
-    categoryUseCase = GetHomeCategories(mockCategoryRepository);
+    categoryUseCase = GetHomeCategories(categoryRepository: mockCategoryRepository);
   });
   List<Category> categoryList = [
     const Category(
