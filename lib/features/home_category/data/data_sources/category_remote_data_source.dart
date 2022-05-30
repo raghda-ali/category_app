@@ -19,7 +19,7 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
   Future<List<Category>> getHomeCategory() async {
     List<Category> categoriesList = [];
     final response =
-        await dio.get("${AppStrings.baseUrl}get_category");
+        await dio.post("${AppStrings.baseUrl}get_category");
     print(response.statusCode);
 
     if (response.statusCode == 200) {

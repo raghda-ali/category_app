@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return
+      BlocProvider(
       create: (context) => CategoryCubit(
           homeCategoriesUseCase: GetHomeCategories(
               categoryRepository: CategoryRepositoryImpl(

@@ -17,32 +17,37 @@ class CategoryScreen extends StatelessWidget {
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
           if (state is CategoryLoading) {
-            return Center(child: Text("Loading"));
+            return const Center(child: Text("Loading"));
           } else if (state is CategorySuccess) {
-            return Expanded(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).size.height * 0.5),
-                  gridDelegate:
-                      const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 250,
-                    mainAxisExtent: 130,
-                    crossAxisSpacing: 1,
-                    mainAxisSpacing: 20,
-                  ),
-                  itemCount: state.homeCategoryList.length,
-                  itemBuilder: (context, index) => CategoryHomeItem(
-                    id: state.homeCategoryList[index].id,
-                    title: state.homeCategoryList[index].name,
-                    imageUrl: state.homeCategoryList[index].image,
-                    backgroundColor: state.homeCategoryList[index].color,
+            return Column(
+              children: [
+                const SizedBox(height: 70,),
+                Expanded(
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).size.height * 0.5),
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 250,
+                        mainAxisExtent: 130,
+                        crossAxisSpacing: 1,
+                        mainAxisSpacing: 20,
+                      ),
+                      itemCount: state.homeCategoryList.length,
+                      itemBuilder: (context, index) => CategoryHomeItem(
+                        id: state.homeCategoryList[index].id,
+                        title: state.homeCategoryList[index].name,
+                        imageUrl: state.homeCategoryList[index].image,
+                        backgroundColor: state.homeCategoryList[index].color,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             );
           } else if (state is CategoryEmpty) {
             return Text("Empty");
